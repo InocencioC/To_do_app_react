@@ -5,7 +5,8 @@ const app = express();
 var corsOptions = {
     origin: "http://localhost:8081"
 };
-app.use(cors(bodyParser.json));
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extend: true }));
 app.get("/", (req, res) => { 
     res.json({ message: "Welcome to react app" });
